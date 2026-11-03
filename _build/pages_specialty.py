@@ -7,7 +7,7 @@ from parts import section, prose, strength, link_cards, faq_details, faq_jsonld,
 
 # 診療科目ページで紹介する重点エリア(地域×診療科目の検索に対応する内部リンク)
 FOCUS = ["kawaguchi", "warabi", "toda", "saitama", "koshigaya", "soka", "adachi", "kita", "itabashi", "toshima",
-         "shinjuku", "shibuya", "bunkyo", "nerima"]
+         "shinjuku", "shibuya", "minato", "bunkyo", "nerima"]
 
 SPEC_WORKS = {
     "beauty-clinic": ["beauty_floor", "beauty_carpet", "azabu_drain", "azabu_work", "beauty_aircon"],

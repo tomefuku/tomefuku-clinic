@@ -58,8 +58,10 @@ def build(write_page, sub_hero):
         <div class="area-list">{stations}</div>
         <p class="area-note" style="margin-top:12px;">上記の駅周辺に限らず、{nm}内全域のクリニック・医院・歯科医院からのご相談を承ります。</p>
       </div>''')
+        if a.get("extra"):
+            body += section("AZABU-JUBAN", a["extra_h2"], prose("\n".join(f"        <p>{p}</p>" for p in a["extra"])), band=True)
         pts = list(a["points"]) + [("check", "料金と範囲を事前に明確に", "作業前に金額と作業範囲をお伝えします。お見積もりは無料です。")]
-        body += section("POINT", f"{nm}で作業するときに確認していること。", strength(pts), band=True)
+        body += section("POINT", f"{nm}で作業するときに確認していること。", strength(pts), band=not a.get("extra"))
         svc = [(f"@@/{p}", f"{sh}の{n}" if p != "price/" else "料金", d) for p, n, d in SERVICES]
         body += section("SERVICE", f"{nm}で対応している清掃メニュー。", link_cards(svc))
         spc = "".join(f'<a href="@@/specialty/{s}/">{sh}の{n}</a>' for s, n, _ in SPECIALTY_LIST)
@@ -75,13 +77,14 @@ def build(write_page, sub_hero):
                         '\n      <p class="area-note" style="margin-top:18px;"><a href="@@/area/" style="color:var(--gold);">対応エリア一覧を見る →</a></p>', band=band)
         body += cta_banner(h2=f"{nm}のクリニック清掃、まずはご相談ください。",
                            p=f"{nm}内の医院の場所・面積・気になる床の状態をお知らせください。現地確認のうえ、無料でお見積もりをご案内します。")
-        title = f"{nm}のクリニック定期清掃・床清掃｜歯科医院・医院の清掃業者｜留福美装"
+        title = a.get("title") or f"{nm}のクリニック定期清掃・床清掃｜歯科医院・医院の清掃業者｜留福美装"
         desc = (f"{a['pref']}{nm}のクリニック・医院・歯科医院の定期清掃、床洗浄・ワックス、剥離洗浄、業務用エアコン洗浄。"
                 f"{'・'.join(a['stations'][:3])}周辺など{nm}全域に対応。{a['points'][0][1]}など、地域の建物に合わせて作業します。")
         area_node = [{"@type": "City", "name": a["pref"] + nm}]
         write_page(path, title, desc, body,
                    crumbs=[("対応エリア", "area/"), (nm, None)],
                    graph=[service_node(f"{nm}のクリニック清掃", desc, path, "クリニック定期清掃・床清掃", area=area_node)],
-                   hero=sub_hero(f"AREA — {a['pref']}", f"{nm}の<br>クリニック清掃・床清掃",
-                                 f"{nm}のクリニック・医院・歯科医院の床洗浄・ワックス、剥離洗浄、定期清掃、業務用エアコン洗浄。地域の建物の特徴に合わせて、診療に影響しない時間帯に作業します。"),
+                   hero=sub_hero(f"AREA — {a['pref']}", a.get("h1") or f"{nm}の<br>クリニック清掃・床清掃",
+                                 f"{nm}のクリニック・医院・歯科医院の床洗浄・ワックス、剥離洗浄、定期清掃、業務用エアコン洗浄。地域の建物の特徴に合わせて、診療に影響しない時間帯に作業します。",
+                                 **({"img": a["hero_img"][0], "alt": a["hero_img"][1]} if a.get("hero_img") else {})),
                    priority="0.7")

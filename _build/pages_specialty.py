@@ -10,7 +10,8 @@ FOCUS = ["kawaguchi", "warabi", "toda", "saitama", "koshigaya", "soka", "adachi"
          "shinjuku", "shibuya", "bunkyo", "nerima"]
 
 SPEC_WORKS = {
-    "beauty-clinic": ["beauty_floor", "beauty_carpet", "beauty_aircon"],
+    "beauty-clinic": ["beauty_floor", "beauty_carpet", "azabu_drain", "azabu_work", "beauty_aircon"],
+    "ophthalmology": ["office_drain", "office_hex"],
     "dental": ["kawaguchi_floor", "beauty_floor"],
 }
 

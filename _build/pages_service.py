@@ -67,7 +67,7 @@ def floor_wax(write_page, sub_hero, service_node):
         {table(["面積の目安", "料金(税込・1回)"], rows, wide=True)}
         <p style="font-size:13px;">床材・汚れの状態・家具の量・作業時間帯によって金額が変わるため、現地確認(無料)のうえでお見積もりします。定期契約の場合は<a href="@@/teiki/">月額プラン</a>でのご提案も可能です。料金の考え方は<a href="@@/price/">料金ページ</a>をご覧ください。</p>
       </div>''', band=True)
-    body += section("WORKS", "床洗浄の施工事例。", works_grid([WORKS["beauty_floor"], WORKS["kawaguchi_floor"], WORKS["beauty_carpet"]]))
+    body += section("WORKS", "床洗浄の施工事例。", works_grid([WORKS["beauty_floor"], WORKS["kawaguchi_floor2"], WORKS["kawaguchi_floor"]]))
     body += section("FAQ", "床洗浄・ワックスのよくあるご質問。", faq_details(faqs), band=True)
     body += specialty_area_block("床洗浄・ワックス")
     body += related(path)
@@ -221,7 +221,7 @@ def aircon(write_page, sub_hero, service_node):
         <p style="font-size:13px;">台数・設置状況(天井の高さ・作業スペース)によって作業時間が変わります。お見積もりは無料です。</p>
       </div>''', band=True)
     body += section("WORKS", "業務用エアコン洗浄の施工事例。",
-                    works_grid([WORKS["beauty_aircon"], WORKS["office_drain"], WORKS["office_hex"]]))
+                    works_grid([WORKS["azabu_drain"], WORKS["azabu_work"], WORKS["beauty_aircon"], WORKS["office_drain"], WORKS["office_hex"]]))
     body += section("FAQ", "業務用エアコン洗浄のよくあるご質問。", faq_details(faqs), band=True)
     body += specialty_area_block("業務用エアコン洗浄")
     body += related(path)

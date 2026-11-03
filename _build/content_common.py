@@ -13,43 +13,62 @@ WORKS = {
         "床洗浄", "床洗浄",
         "beauty-clinic-corridor-floor-before", "beauty-clinic-corridor-floor-after",
         "クリニック 床洗浄 施工前 美容クリニック様 院内廊下の床", "クリニック 床洗浄 施工後 美容クリニック様 院内廊下の床",
-        "某美容クリニック様｜院内廊下の床洗浄", badge=BADGE_MULTI,
+        "某美容クリニック様(さいたま市大宮区)｜院内廊下の床洗浄", badge=BADGE_MULTI,
         desc="院内廊下フロアの床洗浄を実施。診療時間を避けた夜間の作業で、複数院まとめてのご依頼に対応しています。",
         link=("@@/floor-wax/", "床洗浄・ワックスの詳細を見る →")),
     "kawaguchi_floor": ba_card(
         "待合室の床清掃", "床洗浄",
         "kawaguchi-neurosurgery-waiting-room-floor-before", "kawaguchi-neurosurgery-waiting-room-floor-after",
-        "クリニック 待合室 床清掃 施工前 埼玉県川口市 脳神経外科様", "クリニック 待合室 床清掃 施工後 埼玉県川口市 脳神経外科様",
-        "脳神経外科様(埼玉県川口市)｜待合室の床清掃",
+        "クリニック 待合室 床清掃 施工前 埼玉県川口市 某脳神経外科様", "クリニック 待合室 床清掃 施工後 埼玉県川口市 某脳神経外科様",
+        "某脳神経外科様(埼玉県川口市)｜待合室の床清掃",
         desc="受付前・待合室の床をポリッシャーで洗浄しました。",
         link=("@@/area/kawaguchi/", "川口市のクリニック清掃について →")),
     "beauty_carpet": stack_card(
         "カーペット洗浄", "カーペット",
         [("beauty-clinic-carpet-cleaning-01", "クリニック カーペット洗浄 業務用クリーナーでの洗浄作業(美容クリニック様)"),
          ("beauty-clinic-carpet-cleaning-02", "クリニック カーペット洗浄 洗浄機での仕上げ作業(美容クリニック様)")],
-        "某美容クリニック様｜カーペット洗浄", badge=BADGE_MULTI,
+        "某美容クリニック様(さいたま市大宮区)｜カーペット洗浄", badge=BADGE_MULTI,
         desc="院内カーペットの洗浄を実施。床洗浄とあわせた定期清掃としてご依頼いただいています。",
         link=("@@/teiki/", "クリニック定期清掃の詳細を見る →")),
     "beauty_aircon": stack_card(
         "業務用エアコン洗浄", "エアコン",
         [("beauty-clinic-aircon-cleaning-01", "クリニック 業務用エアコン洗浄 天井埋込型エアコンの分解洗浄(美容クリニック様)"),
          ("beauty-clinic-aircon-cleaning-02", "クリニック 業務用エアコン洗浄 高圧洗浄の様子(美容クリニック様)")],
-        "某美容クリニック様｜業務用エアコン洗浄", badge=BADGE_MULTI,
+        "某美容クリニック様(さいたま市大宮区)｜業務用エアコン洗浄", badge=BADGE_MULTI,
         desc="診療時間を避けた夜間対応で、院内の動線を妨げずに施工しました。",
         link=("@@/aircon/", "業務用エアコン洗浄の詳細・料金を見る →")),
     "office_drain": ba_card(
         "業務用エアコン洗浄", "エアコン",
         "office-aircon-drain-pan-before", "office-aircon-drain-pan-after",
         "クリニック 業務用エアコン洗浄 ドレンパン 施工前(眼科様)", "クリニック 業務用エアコン洗浄 ドレンパン 施工後(眼科様)",
-        "某眼科様｜業務用エアコン洗浄(ドレンパン)"),
+        "某眼科様(さいたま市浦和区)｜業務用エアコン洗浄(ドレンパン)"),
     "office_hex": ba_card(
         "業務用エアコン洗浄", "エアコン",
         "office-aircon-heat-exchanger-before", "office-aircon-heat-exchanger-after",
         "クリニック 業務用エアコン洗浄 熱交換器 施工前(眼科様)", "クリニック 業務用エアコン洗浄 熱交換器 施工後(眼科様)",
-        "某眼科様｜業務用エアコン洗浄(熱交換器)"),
+        "某眼科様(さいたま市浦和区)｜業務用エアコン洗浄(熱交換器)"),
+    "kawaguchi_floor2": ba_card(
+        "待合室の床清掃", "床洗浄",
+        "kawaguchi-neurosurgery-waiting-room-floor-02-before", "kawaguchi-neurosurgery-waiting-room-floor-02-after",
+        "クリニック 待合室 床洗浄 施工前 ポリッシャー作業中 埼玉県川口市 某脳神経外科様", "クリニック 待合室 床洗浄 施工後 埼玉県川口市 某脳神経外科様",
+        "某脳神経外科様(埼玉県川口市)｜待合室の床洗浄",
+        desc="待合ベンチ前の通路にたまった黒ずみを、ポリッシャーで洗浄しました。",
+        link=("@@/floor-wax/#waiting", "待合室・診察室の床清掃について →")),
+    "azabu_drain": ba_card(
+        "業務用エアコン洗浄", "エアコン",
+        "azabujuban-beauty-clinic-aircon-drain-pan-before", "azabujuban-beauty-clinic-aircon-drain-pan-after",
+        "クリニック 業務用エアコン洗浄 ドレンパンのカビ 施工前 東京都港区麻布十番 美容クリニック様", "クリニック 業務用エアコン洗浄 ドレンパン 施工後 東京都港区麻布十番 美容クリニック様",
+        "某美容クリニック様(東京都港区麻布十番)｜業務用エアコン洗浄(ドレンパン)",
+        desc="カビが広がっていたドレンパンを分解して洗浄しました。",
+        link=("@@/aircon/", "業務用エアコン洗浄の詳細・料金を見る →")),
+    "azabu_work": single_card(
+        "業務用エアコン洗浄", "エアコン",
+        "azabujuban-beauty-clinic-aircon-cleaning-work", "クリニック 業務用エアコン洗浄 天井埋込型エアコンの分解作業 東京都港区麻布十番 美容クリニック様",
+        "某美容クリニック様(東京都港区麻布十番)｜業務用エアコン洗浄 作業風景",
+        desc="院内を養生したうえで、天井埋込型エアコンを分解して洗浄しました。"),
 }
 
-WORKS_ORDER = ["beauty_floor", "kawaguchi_floor", "beauty_carpet", "beauty_aircon", "office_drain", "office_hex"]
+WORKS_ORDER = ["beauty_floor", "kawaguchi_floor2", "kawaguchi_floor", "beauty_carpet", "azabu_drain", "azabu_work", "beauty_aircon", "office_drain", "office_hex"]
 WORKS_TABS = ["すべて", "床洗浄", "カーペット", "エアコン"]
 
 # ---------------------------------------------------------------------------

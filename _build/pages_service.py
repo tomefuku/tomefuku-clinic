@@ -221,7 +221,7 @@ def aircon(write_page, sub_hero, service_node):
         <p style="font-size:13px;">台数・設置状況(天井の高さ・作業スペース)によって作業時間が変わります。お見積もりは無料です。</p>
       </div>''', band=True)
     body += section("WORKS", "業務用エアコン洗浄の施工事例。",
-                    works_grid([WORKS["beauty_aircon"], WORKS["public_77"], WORKS["office_drain"], WORKS["office_hex"]]))
+                    works_grid([WORKS["beauty_aircon"], WORKS["office_drain"], WORKS["office_hex"]]))
     body += section("FAQ", "業務用エアコン洗浄のよくあるご質問。", faq_details(faqs), band=True)
     body += specialty_area_block("業務用エアコン洗浄")
     body += related(path)

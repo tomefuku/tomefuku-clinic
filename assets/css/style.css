@@ -755,3 +755,13 @@ footer{padding:44px 0 34px;border-top:1px solid var(--line);}
 @media(min-width:640px){.sol-arrow::after{border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:12px solid var(--green);border-right:0;}}
 .sol-num{font-family:"Fraunces",serif;font-size:16px;font-weight:600;color:var(--green);line-height:1;}
 #solution .menu-cta .btn{margin-top:8px;}
+
+/* ---------- ヒーローの文字を読みやすく(明るい写真用) ---------- */
+.hero .ph.dark::before{background:linear-gradient(180deg, rgba(10,18,12,.30) 0%, rgba(10,18,12,.42) 40%, rgba(10,18,12,.78) 75%, rgba(10,18,12,.88) 100%);z-index:1;}
+.hero .ph.dark{position:absolute;}
+.hero-watermark{opacity:.10;}
+.hero h1,.hero-eyebrow,.hero-sub{text-shadow:0 2px 14px rgba(0,0,0,.45), 0 1px 3px rgba(0,0,0,.35);}
+.hero-sub{color:rgba(255,255,255,.95);}
+@media(max-width:640px){
+  .hero-inner{padding-left:22px;padding-right:22px;}
+}

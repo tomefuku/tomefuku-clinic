@@ -47,15 +47,9 @@ WORKS = {
         "office-aircon-heat-exchanger-before", "office-aircon-heat-exchanger-after",
         "業務用エアコン洗浄 熱交換器 施工前", "業務用エアコン洗浄 熱交換器 施工後",
         "会社事務所様(埼玉県さいたま市)・熱交換器"),
-    "public_77": single_card(
-        "業務用エアコン洗浄", "エアコン",
-        "public-facility-aircon-cleaning-77-units", "公共施設の業務用エアコン洗浄 日本年金機構様の施設にて77台を一括対応",
-        "日本年金機構様の施設｜業務用エアコン77台を一括対応",
-        desc="公共施設にて業務用エアコン77台の洗浄を実施。台数の多い施設でも、日程と人員を調整して対応します。",
-        link=("@@/aircon/", "業務用エアコン洗浄の詳細・料金を見る →")),
 }
 
-WORKS_ORDER = ["beauty_floor", "kawaguchi_floor", "beauty_carpet", "beauty_aircon", "public_77", "office_drain", "office_hex"]
+WORKS_ORDER = ["beauty_floor", "kawaguchi_floor", "beauty_carpet", "beauty_aircon", "office_drain", "office_hex"]
 WORKS_TABS = ["すべて", "床洗浄", "カーペット", "エアコン"]
 
 # ---------------------------------------------------------------------------

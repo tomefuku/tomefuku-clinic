@@ -40,13 +40,13 @@ WORKS = {
     "office_drain": ba_card(
         "業務用エアコン洗浄", "エアコン",
         "office-aircon-drain-pan-before", "office-aircon-drain-pan-after",
-        "業務用エアコン洗浄 ドレンパン 施工前", "業務用エアコン洗浄 ドレンパン 施工後",
-        "会社事務所様(埼玉県さいたま市)・ドレンパン"),
+        "クリニック 業務用エアコン洗浄 ドレンパン 施工前(眼科様)", "クリニック 業務用エアコン洗浄 ドレンパン 施工後(眼科様)",
+        "某眼科様｜業務用エアコン洗浄(ドレンパン)"),
     "office_hex": ba_card(
         "業務用エアコン洗浄", "エアコン",
         "office-aircon-heat-exchanger-before", "office-aircon-heat-exchanger-after",
-        "業務用エアコン洗浄 熱交換器 施工前", "業務用エアコン洗浄 熱交換器 施工後",
-        "会社事務所様(埼玉県さいたま市)・熱交換器"),
+        "クリニック 業務用エアコン洗浄 熱交換器 施工前(眼科様)", "クリニック 業務用エアコン洗浄 熱交換器 施工後(眼科様)",
+        "某眼科様｜業務用エアコン洗浄(熱交換器)"),
 }
 
 WORKS_ORDER = ["beauty_floor", "kawaguchi_floor", "beauty_carpet", "beauty_aircon", "office_drain", "office_hex"]

@@ -151,14 +151,16 @@ def ba_card(cat, data_cat, before, after, alt_b, alt_a, h3, desc="", badge="", l
 
 
 def stack_card(cat, data_cat, imgs, h3, desc="", badge="", link=None):
-    """施工事例カード(縦に写真を並べる)  imgs: [(file, alt)]"""
+    """施工事例カード(作業写真を横に並べる)  imgs: [(file, alt)]"""
     b = f'<div class="wm-badge">{badge}</div>' if badge else ""
     d = f'<p class="wm-desc">{desc}</p>' if desc else ""
     l = f'<a class="wm-link" href="{link[0]}">{link[1]}</a>' if link else ""
-    ims = "\n".join(f'            <img src="@@/assets/img/{f}.webp" alt="{a}" loading="lazy" decoding="async">' for f, a in imgs)
+    ims = "\n".join(f'              <img src="@@/assets/img/{f}.webp" alt="{a}" loading="lazy" decoding="async">' for f, a in imgs)
     return f'''        <div class="work-card" data-cat="{data_cat}">
-          <div class="work-photo-stack">
+          <div class="ph work-photo">
+            <div class="ba-split">
 {ims}
+            </div>
           </div>
           <div class="work-meta">
             <div class="cat">{cat}</div>

@@ -23,15 +23,15 @@ SITE_NAME = "留福美装 クリニック清掃"
 # ----------------------------------------------------------------------------
 COMPANY = {
     "name": "留福美装",
-    "name_en": "TOMEFUKU BISO",
+    "name_en": "TOMEFUKU BISOU",
     "representative": "神原瑠翔",
     "representative_spaced": "神原　瑠翔",
     "tax_id": "T-9810140173020",
-    "postal_code": "330-0844",
+    "postal_code": "330-0854",
     "region": "埼玉県",
     "locality": "さいたま市大宮区",
     "street": "桜木町2丁目3番地 大宮マルイ7階",
-    "address_full": "〒330-0844　埼玉県さいたま市大宮区桜木町2丁目3番地　大宮マルイ7階",
+    "address_full": "〒330-0854　埼玉県さいたま市大宮区桜木町2丁目3番地　大宮マルイ7階",
     "tel_mobile": "090-1336-2873",
     "tel_mobile_link": "09013362873",
     "tel_mobile_intl": "+81-90-1336-2873",

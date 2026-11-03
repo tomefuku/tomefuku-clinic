@@ -428,7 +428,7 @@ MESSAGE = '''
           <div class="message-name">
             <div class="m-role">代表</div>
             <div class="m-person">神原 瑠翔</div>
-            <div class="m-brand">TOMEFUKU BISO</div>
+            <div class="m-brand">TOMEFUKU BISOU</div>
           </div>
         </div>
       </div>
@@ -541,7 +541,7 @@ HERO = '''
     </div>
     <div class="hero-watermark" aria-hidden="true"><img src="@@/assets/img/logo-turtle-white.webp" alt=""></div>
     <div class="wrap hero-inner">
-      <span class="hero-eyebrow wordmark">TOMEFUKU BISO</span>
+      <span class="hero-eyebrow wordmark">TOMEFUKU BISOU</span>
       <h1><span style="display:inline-block;">クリニックの</span><br><span style="display:inline-block;">定期清掃・</span><span style="display:inline-block;">床清掃専門</span></h1>
       <p class="hero-sub"><strong class="hero-key">関東の複数院を、窓口ひとつで一括管理。</strong>東京・埼玉を中心に、待合室・診察室の床洗浄・ワックス、剥離洗浄から業務用エアコン洗浄まで。休診日・夜間に作業し、診療を止めずに院内を整えます。</p>
       <div class="hero-actions">

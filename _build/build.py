@@ -139,7 +139,7 @@ def header_html(is_top):
   <div class="wrap nav-row">
     <a href="{logo}" class="logo-mark">
       <img src="@@/assets/img/logo-turtle-green.webp" alt="留福美装" width="34" height="23" style="width:34px;height:auto;">
-      <span>留福美装<br><span class="logo-sub">TOMEFUKU BISO</span></span>
+      <span>留福美装<br><span class="logo-sub">TOMEFUKU BISOU</span></span>
     </a>
     <nav class="main-nav" aria-label="メインメニュー">
 {nav_html}
@@ -180,7 +180,7 @@ def footer_html(is_top):
   </div>
   <div class="wrap footer-row">
     <div style="display:flex;align-items:center;gap:16px;">
-      <img src="@@/assets/img/logo-tomefuku-biso.webp" alt="留福美装 TOMEFUKU BISO" width="64" height="67" loading="lazy" style="width:64px;height:auto;">
+      <img src="@@/assets/img/logo-tomefuku-biso.webp" alt="留福美装 TOMEFUKU BISOU" width="64" height="67" loading="lazy" style="width:64px;height:auto;">
       <div>
         <div style="font-weight:700;color:var(--ink);">留福美装</div>
         〒{C["postal_code"]} {C["region"]}{C["locality"]}{C["street"]}<br>
@@ -263,7 +263,7 @@ def write_page(path, title, desc, body, crumbs=None, graph=None, is_top=False, o
     <div class="intro-glow"></div>
     <img src="@@/assets/img/logo-turtle-white.webp" alt="留福美装" class="intro-logo">
     <div class="intro-line"></div>
-    <div class="intro-word">TOMEFUKU BISO</div>
+    <div class="intro-word">TOMEFUKU BISOU</div>
   </div>
 </div>
 '''

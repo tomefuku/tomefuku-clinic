@@ -537,15 +537,15 @@ HERO = '''
   <!-- 01 HERO -->
   <section class="hero">
     <div class="ph dark hero-photo">
-      <img src="@@/assets/img/clinic-carpet-cleaning-hero.webp" alt="クリニックの院内カーペットを業務用クリーナーで洗浄する留福美装の作業風景" fetchpriority="high" decoding="async" style="width:100%;height:100%;object-fit:cover;display:block;">
+      <img src="@@/assets/img/clinic-corridor-floor-polisher-cleaning.webp" alt="クリニック院内廊下の床をポリッシャーで洗浄する留福美装の作業風景" fetchpriority="high" decoding="async" style="width:100%;height:100%;object-fit:cover;object-position:50% 40%;display:block;">
     </div>
     <div class="hero-watermark" aria-hidden="true"><img src="@@/assets/img/logo-turtle-white.webp" alt=""></div>
     <div class="wrap hero-inner">
       <span class="hero-eyebrow wordmark">TOMEFUKU BISO</span>
-      <h1>東京・埼玉の<br><span style="display:inline-block;">クリニック定期清掃・</span><span style="display:inline-block;">床清掃</span></h1>
-      <p class="hero-sub">綺麗と共に、福をお届けします。医院・歯科医院・医療施設の床洗浄・ワックス、剥離洗浄、定期清掃から業務用エアコン洗浄まで。休診日・診療時間外・夜間に作業し、診療を止めずに院内を整えます。</p>
+      <h1><span style="display:inline-block;">クリニックの</span><br><span style="display:inline-block;">定期清掃・</span><span style="display:inline-block;">床清掃専門</span></h1>
+      <p class="hero-sub"><strong class="hero-key">関東の複数院を、窓口ひとつで一括管理。</strong>東京・埼玉を中心に、待合室・診察室の床洗浄・ワックス、剥離洗浄から業務用エアコン洗浄まで。休診日・夜間に作業し、診療を止めずに院内を整えます。</p>
       <div class="hero-actions">
-        <a class="btn" href="#price">料金・サービスを見る</a>
+        <a class="btn" href="#solution">院ごとの清掃をまとめる</a>
         <a class="btn outline" href="#contact">無料見積もり</a>
       </div>
     </div>
@@ -554,15 +554,87 @@ HERO = '''
 '''
 
 
+SOLUTION = '''
+  <!-- 01.5 SOLUTION(複数院の本部向け) -->
+  <section class="section-pad band" id="solution">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="kicker">FOR HEAD OFFICE</span>
+        <p class="sol-target">複数院を運営する医療法人・クリニック本部ご担当者様へ</p>
+        <h2>院ごとにバラバラの清掃、<br><span class="sol-accent">窓口ひとつ</span>にまとめませんか？</h2>
+        <p class="desc">院の数だけ増えていく「清掃の管理業務」を、留福美装がまとめてお引き受けします。</p>
+      </div>
+
+      <div class="sol-grid">
+        <div class="sol-worries reveal">
+          <h3 class="sol-h3">こんなお悩みありませんか？</h3>
+          <ul class="sol-checks">
+            <li>院ごとに<strong>清掃会社がバラバラ</strong></li>
+            <li>院によって<strong>仕上がりに差</strong>がある</li>
+            <li><strong>いつ清掃したか</strong>把握できない</li>
+            <li>日程調整が<strong>各院の負担</strong>になっている</li>
+          </ul>
+        </div>
+        <div class="sol-diagram reveal">
+          <h3 class="sol-h3">本部の清掃管理が、ここまでシンプルに</h3>
+          <div class="sol-compare">
+            <div class="sol-box">
+              <span class="sol-badge">いままで</span>
+              <div class="sol-node hq">本部</div>
+              <div class="sol-row vendors"><span>清掃会社A</span><span>清掃会社B</span><span>清掃会社C</span></div>
+              <div class="sol-row clinics"><span>○○院</span><span>△△院</span><span>□□院</span></div>
+              <p class="sol-cap">連絡・契約・日程調整が<br><strong class="neg">院の数だけ発生</strong></p>
+            </div>
+            <div class="sol-arrow" aria-hidden="true"></div>
+            <div class="sol-box good">
+              <span class="sol-badge">留福美装なら</span>
+              <div class="sol-node hq">本部</div>
+              <div class="sol-node one">留福美装(窓口ひとつ)</div>
+              <div class="sol-row clinics"><span>○○院</span><span>△△院</span><span>□□院</span></div>
+              <p class="sol-cap">ご連絡は<strong>1か所だけ</strong>。<br>全院を同じ基準で清掃</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="sol-h3 reveal" style="margin-top:56px;">留福美装が、本部の手間を引き受けます</h3>
+      <div class="strength-grid">
+        <div class="strength-item">
+          <div class="mark"><span class="sol-num">1</span></div>
+          <h3>窓口をひとつに</h3>
+          <p>依頼・日程調整・問い合わせは、同じ担当が全院分まとめて対応。新規開院も電話一本で追加できます。</p>
+        </div>
+        <div class="strength-item">
+          <div class="mark"><span class="sol-num">2</span></div>
+          <h3>定期清掃を当社で管理</h3>
+          <p>院ごとの実施時期を当社で管理し、時期が来たらご案内。やり忘れがなくなります。</p>
+        </div>
+        <div class="strength-item">
+          <div class="mark"><span class="sol-num">3</span></div>
+          <h3>写真付き作業報告書</h3>
+          <p>毎回BEFORE/AFTER写真付きの報告書をお送りします。現地に行かずに全院の状態を確認できます。</p>
+        </div>
+        <div class="strength-item">
+          <div class="mark"><span class="sol-num">4</span></div>
+          <h3>診療を止めない</h3>
+          <p>夜間・休日の作業に対応。患者さんのいない時間に、院内を養生してから作業します。</p>
+        </div>
+      </div>
+      <div class="menu-cta"><a class="btn" href="#contact">まずは1院から相談する</a>　<a class="btn outline" href="#price">料金・サービスを見る</a></div>
+    </div>
+  </section>
+'''
+
+
 def build(write_page):
     from build import service_node
-    body = (HERO + price_section() + STRENGTH + works_section() + service_details() + MID_CTA + for_clinics()
+    body = (HERO + SOLUTION + price_section() + STRENGTH + works_section() + service_details() + MID_CTA + for_clinics()
             + area_section() + MESSAGE + about_section() + social_section() + faq_section() + contact_section())
     graph = [faq_jsonld([(q, a) for q, a in TOP_FAQS])]
     for p, n, d in SERVICES[:4]:
         graph.append(service_node(n, d, p, n))
     write_page(
         "",
-        "東京・埼玉のクリニック定期清掃・床清掃｜医院・歯科医院の清掃業者 留福美装",
-        "東京都・埼玉県のクリニック・医院・歯科医院の定期清掃と床清掃なら留福美装。待合室・診察室の床洗浄・ワックス、床剥離洗浄、ガラス清掃、業務用エアコン洗浄まで、休診日・夜間に対応。関東で多院展開する美容クリニック様の全院を担当。",
+        "クリニックの定期清掃・床清掃専門｜東京・埼玉・関東の複数院を一括管理｜留福美装",
+        "クリニックの定期清掃・床清掃専門の留福美装。関東の複数院の清掃を窓口ひとつで一括管理し、写真付き報告書で全院の状態を確認できます。東京都・埼玉県の医院・歯科医院の床洗浄・ワックス、剥離洗浄、業務用エアコン洗浄に休診日・夜間対応。",
         body, graph=graph, is_top=True, changefreq="weekly", priority="1.0")

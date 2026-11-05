@@ -28,10 +28,8 @@ C = COMPANY
 # 構造化データ(すべて実際の会社情報のみ)
 # ---------------------------------------------------------------------------
 def area_served():
-    out = [{"@type": "AdministrativeArea", "name": "東京都"}, {"@type": "AdministrativeArea", "name": "埼玉県"}]
-    for a in AREAS:
-        out.append({"@type": "City", "name": a["pref"] + a["name"]})
-    return out
+    return [{"@type": "AdministrativeArea", "name": n} for n in
+            ["東京都", "埼玉県", "神奈川県", "千葉県", "茨城県", "栃木県", "群馬県"]]
 
 
 def org_node():
@@ -56,7 +54,7 @@ def localbusiness_node():
         "@id": SITE_URL + "/#localbusiness",
         "name": C["name"],
         "alternateName": C["name_en"],
-        "description": "東京都・埼玉県のクリニック・医院・歯科医院向けに、床洗浄・ワックス、床剥離洗浄、定期清掃、ガラス清掃、業務用エアコン洗浄を行う清掃会社です。",
+        "description": "東京都・埼玉県を中心に関東全域のクリニック・医院・歯科医院向けに、床洗浄・ワックス、床剥離洗浄、定期清掃、ガラス清掃、業務用エアコン洗浄を行う清掃会社です。",
         "url": SITE_URL + "/",
         "image": SITE_URL + "/assets/img/ogp-clinic-cleaning.jpg",
         "logo": SITE_URL + "/assets/img/logo-tomefuku-biso.webp",
@@ -165,8 +163,13 @@ def footer_html(is_top):
     from content_common import SERVICES
     svc = "".join(f'<li><a href="@@/{p}">{n}</a></li>' for p, n, _ in SERVICES)
     spc = "".join(f'<li><a href="@@/specialty/{s}/">{n}</a></li>' for s, n, _ in SPECIALTY_LIST)
-    sai = "".join(f'<li><a href="@@/area/{a["slug"]}/">{a["name"]}</a></li>' for a in AREAS if a["pref"] == "埼玉県")
-    tok = "".join(f'<li><a href="@@/area/{a["slug"]}/">{a["name"]}</a></li>' for a in AREAS if a["pref"] == "東京都")
+    from content_areas import AREA_BY_SLUG
+    from content_prefs import PREFS
+    sai = "".join(f'<li><a href="@@/area/{s}/">{AREA_BY_SLUG[s]["name"]}</a></li>' for s in ["saitama", "kawaguchi", "toda", "warabi", "koshigaya", "kasukabe", "tokorozawa", "kawagoe"])
+    sai += '<li><a href="@@/area/#saitama">埼玉県の全市町村 →</a></li>'
+    tok = "".join(f'<li><a href="@@/area/{s}/">{AREA_BY_SLUG[s]["name"]}</a></li>' for s in ["shinjuku", "shibuya", "minato", "toshima", "setagaya", "adachi", "hachioji", "machida"])
+    tok += '<li><a href="@@/area/#tokyo">東京都の全市区町村 →</a></li>'
+    tok += "".join(f'<li><a href="@@/area/{p["slug"]}/">{p["name"]}</a></li>' for p in PREFS)
     contact = "#contact" if is_top else "@@/contact/"
     return f'''<footer>
   <div class="wrap">

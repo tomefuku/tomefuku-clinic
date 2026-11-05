@@ -25,7 +25,7 @@ TOP_FAQS = [
     ("複数の院(分院)をまとめて依頼できますか？",
      "可能です。関東で多院展開する美容クリニック様の全院を担当しています。院ごとに日程を分けることも、全院共通の計画でまとめて手配することもできます。"),
     ("対応エリアを教えてください。",
-     "埼玉県(川口市・蕨市・戸田市・さいたま市・越谷市・草加市など)と東京都(足立区・北区・板橋区・豊島区・新宿区・渋谷区・港区など)を中心に対応しています。その他の地域もご相談ください。詳しくは<a href=\"@@/area/\">対応エリア</a>をご覧ください。"),
+     "埼玉県・東京都の全市区町村を中心に、神奈川県・千葉県・茨城県・栃木県・群馬県まで関東全域に対応しています。遠方の場合は、別途出張費をいただくことがあります(金額はお見積もりの際にご案内します)。詳しくは<a href=\"@@/area/\">対応エリア</a>をご覧ください。"),
 ]
 
 SERVICE_OPTIONS = ["床洗浄・ワックス", "床剥離洗浄", "定期清掃", "待合室・診察室の床清掃", "カーペット洗浄",
@@ -336,8 +336,8 @@ def area_section():
     def links(slugs, label_key="short"):
         return "".join(f'<a href="@@/area/{s}/">{AREA_BY_SLUG[s][label_key]}</a>' for s in slugs)
     main = ["kawaguchi", "toda", "warabi", "saitama"]
-    sai_other = [a["slug"] for a in AREAS if a["pref"] == "埼玉県" and a["slug"] not in main]
-    tokyo = [a["slug"] for a in AREAS if a["pref"] == "東京都"]
+    sai_other = [a["slug"] for a in AREAS if a["pref"] == "埼玉県" and a["slug"] not in main][:9] + ["tokorozawa", "kumagaya", "kuki"]
+    tokyo = [a["slug"] for a in AREAS if a["pref"] == "東京都" and a["name"].endswith("区")]
     return f'''
   <!-- 07 AREA -->
   <section class="section-pad band" id="area">
@@ -345,7 +345,7 @@ def area_section():
       <div class="sec-head reveal">
         <span class="kicker">AREA</span>
         <h2>対応エリア</h2>
-        <p class="desc">さいたま市大宮区の拠点から、埼玉県南部・東部と東京都内のクリニック・医院・歯科医院へ伺います。地域ごとの建物の傾向や作業の段取りは、各エリアのページでご紹介しています。掲載のない地域もお気軽にご相談ください。</p>
+        <p class="desc">さいたま市大宮区の拠点から、埼玉県・東京都を中心に関東全域のクリニック・医院・歯科医院へ伺います。地域ごとの建物の傾向や作業の段取りは、各エリアのページでご紹介しています。掲載のない地域もお気軽にご相談ください。</p>
       </div>
 
       <div class="area-diagram">
@@ -386,13 +386,13 @@ def area_section():
           </div>
         </div>
         <div class="area-block">
-          <div class="area-block-label">東京都の対応エリア</div>
+          <div class="area-block-label">東京23区</div>
           <div class="area-list">
             {links(tokyo)}
           </div>
         </div>
       </div>
-      <p class="area-note" style="margin-top:26px;">その他の東京23区・埼玉県内の地域もご相談ください。<a href="@@/area/" style="color:var(--gold);">対応エリア一覧を見る →</a></p>
+      <p class="area-note" style="margin-top:26px;">埼玉県・東京都の全市区町村に加え、神奈川県・千葉県・茨城県・栃木県・群馬県まで関東全域に伺います(遠方は別途出張費をいただく場合があります)。<a href="@@/area/" style="color:var(--gold);">対応エリア一覧を見る →</a></p>
     </div>
   </section>
 '''

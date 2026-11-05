@@ -382,10 +382,11 @@ AREAS = [
     },
 ]
 
+from content_areas2 import AREAS2  # noqa: E402
+AREAS = AREAS + AREAS2
 AREA_BY_SLUG = {a["slug"]: a for a in AREAS}
 
 # 東京23区のうち、上記以外(地域別ページはまだないが対応相談可)
-OTHER_TOKYO = ["千代田区", "中央区", "台東区", "墨田区", "江東区", "品川区", "目黒区", "大田区",
-               "世田谷区", "中野区", "杉並区", "江戸川区"]
+OTHER_TOKYO = []
 # 埼玉県のその他の市(相談可)
-OTHER_SAITAMA = ["新座市", "志木市", "富士見市", "ふじみ野市", "桶川市", "伊奈町", "吉川市", "松伏町", "所沢市"]
+OTHER_SAITAMA = []

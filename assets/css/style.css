@@ -766,3 +766,15 @@ footer{padding:44px 0 34px;border-top:1px solid var(--line);}
   .hero-inner{padding-left:22px;padding-right:22px;}
 }
 @media(max-width:640px){ .hero--sub .hero-inner{padding-left:22px;padding-right:22px;} }
+
+/* ---------- 料金表:スマホではカード型に組み替え(縦書き崩れ対策) ---------- */
+.prose .sd-table td,.prose .sd-table th{white-space:normal;}
+.prose .sd-table td:first-child{min-width:9em;}
+@media(max-width:640px){
+  .prose .sd-table thead{display:none;}
+  .prose .sd-table,.prose .sd-table tbody,.prose .sd-table tr,.prose .sd-table td{display:block;width:100%;}
+  .prose .sd-table tr{border:1px solid var(--line);border-top:2px solid var(--green);background:#fff;padding:12px 14px;margin-bottom:10px;}
+  .prose .sd-table td{border:none;padding:3px 0;text-align:left !important;white-space:normal !important;font-size:13.5px;}
+  .prose .sd-table td:first-child{font-weight:700;color:var(--ink);font-size:14px;margin-bottom:4px;}
+  .prose .sd-table td:not(:first-child)::before{content:attr(data-label)"：";color:var(--gold);font-size:12px;margin-right:4px;}
+}

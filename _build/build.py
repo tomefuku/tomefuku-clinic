@@ -18,7 +18,7 @@ from content_common import SPECIALTY_LIST  # noqa: E402
 sys.modules.setdefault("build", sys.modules[__name__])
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-ASSET_VER = "20261104"
+ASSET_VER = "20261105"
 PAGES = []  # sitemap 用
 
 C = COMPANY

@@ -84,7 +84,7 @@ def tags(items, heading=None):
 def table(headers, rows, wide=False):
     cls = "sd-table wide" if wide else "sd-table"
     th = "".join(f"<th>{h}</th>" for h in headers)
-    trs = "\n".join("<tr>" + "".join(f"<td>{c}</td>" for c in r) + "</tr>" for r in rows)
+    trs = "\n".join("<tr>" + "".join(f'<td data-label="{headers[i]}">{c}</td>' for i, c in enumerate(r)) + "</tr>" for r in rows)
     return f'<div class="table-scroll"><table class="{cls}"><thead><tr>{th}</tr></thead><tbody>\n{trs}\n</tbody></table></div>'
 
 

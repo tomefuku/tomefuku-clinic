@@ -30,7 +30,7 @@ TOP_FAQS = [
 
 SERVICE_OPTIONS = ["床洗浄・ワックス", "床剥離洗浄", "定期清掃", "待合室・診察室の床清掃", "カーペット洗浄",
                    "ガラス清掃", "業務用エアコン洗浄", "エアコンフィルター清掃", "その他・未定"]
-FREQ_OPTIONS = ["1回のみ(スポット)", "毎月", "2か月に1回", "3か月に1回", "半年に1回", "年1回", "未定・相談したい"]
+FREQ_OPTIONS = ["1回のみ(スポット)", "週1回", "毎月", "2か月に1回", "3か月に1回", "半年に1回", "年1回", "未定・相談したい"]
 
 
 def contact_section(heading="まずはご相談ください。", h_tag="h2"):
@@ -124,12 +124,12 @@ EST = '<div class="price" style="font-size:15px;">お見積もり</div>'
 def price_section():
     a_from = PRICES["aircon_from"]
     cards = [
-        card("@@/floor-wax/", "クリニック床洗浄・ワックス", EST,
-             "待合室・診察室・処置室・廊下の床を洗浄し、ワックスで保護します。料金は面積別。床材と汚れの状態を確認してお見積もりします。",
-             featured=True, kicker="MAIN SERVICE", tagset=["休診日・夜間対応", "面積別料金", "医療機器に配慮"]),
-        card("@@/teiki/", "クリニック定期清掃", EST, "月額プランで床・カーペット・ガラスなどを定期的に"),
+        card("@@/floor-wax/", "クリニック床洗浄・ワックス", f'<div class="price">{PRICES["floor_unit"]}<small>円(税込)〜/㎡</small></div>',
+             "待合室・診察室・処置室・廊下の床を洗浄し、ワックスで保護します。床材と汚れの状態を確認して正式にお見積もりします。",
+             featured=True, kicker="MAIN SERVICE", tagset=["休診日・夜間対応", "1㎡ 800円〜", "医療機器に配慮"]),
+        card("@@/teiki/", "クリニック定期清掃", EST, "週1回・毎月・隔月・年4回の月額プランで、床・カーペット・ガラスなどを定期的に"),
         card("@@/hakuri/", "床剥離洗浄", EST, "古いワックスと黒ずみを剥がして床をリセット"),
-        card("@@/floor-wax/#waiting", "待合室・診察室の床清掃", EST, "来院者の動線の黒ずみを重点的に"),
+        card("@@/floor-wax/#waiting", "待合室・診察室の床清掃", f'<div class="price">{PRICES["floor_unit"]}<small>円(税込)〜/㎡</small></div>', "来院者の動線の黒ずみを重点的に"),
         card("@@/specialty/dental/", "医院・歯科医院の定期清掃", EST, "ユニットまわりの床・キッズスペースにも配慮"),
         card("@@/aircon/", "業務用エアコン洗浄", f'<div class="price">{a_from}<small>円(税込)〜/台</small></div>',
              "天井埋込型・天吊り型の分解洗浄。診療時間外・夜間の作業に対応します。<br>実績:関東で多院展開する美容クリニック様の全院を担当",
@@ -138,10 +138,10 @@ def price_section():
              f'<div class="price">{PRICES["filter"].replace("円/台", "")}<small>円(税込)/台</small></div>', "業務用エアコンのフィルターを洗浄"),
         card("@@/teiki/#glass", "ガラス清掃", '<div class="price">3,300<small>円(税込)/枚</small></div>',
              "入口・待合室の窓ガラスや自動ドア"),
-        card("@@/teiki/#carpet", "カーペット洗浄", f'<div class="price" style="font-size:15px;">{price_or_estimate(PRICES["carpet"])}</div>',
+        card("@@/teiki/#carpet", "カーペット洗浄", f'<div class="price">{PRICES["carpet_unit"]}<small>円(税込)〜/㎡</small></div>',
              "待合室・施術室のカーペットを洗浄"),
-        card("@@/price/", "料金一覧", '<div class="price" style="font-size:15px;">面積別・月額プラン</div>',
-             "床清掃の面積別料金と定期清掃の月額プラン", more="料金表を見る"),
+        card("@@/price/", "料金一覧", '<div class="price" style="font-size:15px;">㎡単価・月額プラン</div>',
+             "床洗浄・カーペット洗浄の㎡単価と定期清掃の月額プラン", more="料金表を見る"),
     ]
     return f'''
   <!-- 02 SERVICE / PRICE MENU -->
@@ -180,7 +180,7 @@ STRENGTH = '''
         <div class="strength-item">
           <div class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#1f3d2e" stroke-width="1.6"><path d="M4 12h16M4 6h10M4 18h13"/></svg></div>
           <h3>明確な料金とお見積もり</h3>
-          <p>作業前に金額と作業範囲をはっきりお伝えします。院長先生・事務長様が予算を立てやすい、面積別・月額プランでご提案します。</p>
+          <p>作業前に金額と作業範囲をはっきりお伝えします。院長先生・事務長様が予算を立てやすい、㎡単価・月額プランでご提案します。</p>
         </div>
         <div class="strength-item">
           <div class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="#1f3d2e" stroke-width="1.6"><rect x="4" y="5" width="16" height="14" rx="1"/><path d="M4 10h16"/></svg></div>
@@ -244,7 +244,7 @@ def sd(id_, title, price, intro, lists, link, extra=""):
 def service_details():
     ac = "".join(f"<li>{n}:{p} <span style=\"color:var(--ink-soft);\">({s})</span></li>" for n, p, s in PRICES["aircon"])
     items = [
-        sd("sd-floor", "クリニック床洗浄・ワックス", "面積別料金(お見積もり)",
+        sd("sd-floor", "クリニック床洗浄・ワックス", "1㎡あたり 800円(税込)〜",
            "待合室・受付・診察室・処置室・廊下など、院内の床をポリッシャーで洗浄し、ワックスを塗布して保護します。床材(長尺シート・塩ビタイル・フローリング・石材調タイルなど)を確認し、素材に合った方法で仕上げます。",
            [("こんな医院様におすすめ", ["待合室の動線や受付前の黒ずみが気になる", "日常のモップ拭きでは床のくすみが取れない", "開院時のきれいな床の状態を保ちたい"]),
             ("作業内容", ["家具・備品の移動(動かせる範囲)と養生", "ポリッシャーによる床洗浄・汚水回収", "すすぎ・乾燥・ワックス塗布", "備品の復旧・仕上がり確認"])],
@@ -253,7 +253,7 @@ def service_details():
            "古いワックスを剥離剤で取り除き、ワックス層に入り込んだ黒ずみや黄ばみごと床をリセットします。仕上げに新しいワックスを塗り重ねます。",
            [("こんな医院様におすすめ", ["通常の床洗浄では黒ずみが落ちなくなった", "長年のワックスの重ね塗りで床が黄ばんでいる", "清掃業者を変更するので、一度床を整えたい"])],
            ("@@/hakuri/", "床剥離洗浄の詳細を見る →")),
-        sd("sd-teiki", "クリニック定期清掃(月額プラン)", "月額プラン(お見積もり)",
+        sd("sd-teiki", "クリニック定期清掃(月額プラン)", "月額プラン(週1回・毎月・隔月・年4回)",
            "床洗浄・ワックス、カーペット洗浄、ガラス清掃、エアコンフィルター清掃などを組み合わせ、毎月・隔月・3か月ごとなど決まった頻度で行います。",
            [("こんな医院様におすすめ", ["清掃の手配を毎回するのが手間になっている", "年間の清掃費用を予算化しておきたい", "分院も含めて清掃の品質をそろえたい"])],
            ("@@/teiki/", "クリニック定期清掃の詳細・プランを見る →")),

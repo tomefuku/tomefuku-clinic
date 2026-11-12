@@ -126,7 +126,7 @@ def price_section():
     cards = [
         card("@@/floor-wax/", "クリニック床洗浄・ワックス", f'<div class="price">{PRICES["floor_unit"]}<small>円(税込)〜/㎡</small></div>',
              "待合室・診察室・処置室・廊下の床を洗浄し、ワックスで保護します。床材と汚れの状態を確認して正式にお見積もりします。",
-             featured=True, kicker="MAIN SERVICE", tagset=["休診日・夜間対応", "1㎡ 800円〜", "医療機器に配慮"]),
+             featured=True, kicker="MAIN SERVICE", tagset=["休診日・夜間対応", "1㎡ 880円〜", "医療機器に配慮"]),
         card("@@/teiki/", "クリニック定期清掃", EST, "週1回・毎月・隔月・年4回の月額プランで、床・カーペット・ガラスなどを定期的に"),
         card("@@/hakuri/", "床剥離洗浄", EST, "古いワックスと黒ずみを剥がして床をリセット"),
         card("@@/floor-wax/#waiting", "待合室・診察室の床清掃", f'<div class="price">{PRICES["floor_unit"]}<small>円(税込)〜/㎡</small></div>', "来院者の動線の黒ずみを重点的に"),
@@ -244,7 +244,7 @@ def sd(id_, title, price, intro, lists, link, extra=""):
 def service_details():
     ac = "".join(f"<li>{n}:{p} <span style=\"color:var(--ink-soft);\">({s})</span></li>" for n, p, s in PRICES["aircon"])
     items = [
-        sd("sd-floor", "クリニック床洗浄・ワックス", "1㎡あたり 800円(税込)〜",
+        sd("sd-floor", "クリニック床洗浄・ワックス", "1㎡あたり 880円(税込)〜",
            "待合室・受付・診察室・処置室・廊下など、院内の床をポリッシャーで洗浄し、ワックスを塗布して保護します。床材(長尺シート・塩ビタイル・フローリング・石材調タイルなど)を確認し、素材に合った方法で仕上げます。",
            [("こんな医院様におすすめ", ["待合室の動線や受付前の黒ずみが気になる", "日常のモップ拭きでは床のくすみが取れない", "開院時のきれいな床の状態を保ちたい"]),
             ("作業内容", ["家具・備品の移動(動かせる範囲)と養生", "ポリッシャーによる床洗浄・汚水回収", "すすぎ・乾燥・ワックス塗布", "備品の復旧・仕上がり確認"])],

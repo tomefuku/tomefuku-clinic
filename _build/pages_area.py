@@ -131,10 +131,13 @@ def build(write_page, sub_hero):
         body = section("ABOUT", f"{nm}のクリニック・医院の清掃について。", prose(f'''
         <p>{p["intro"]}</p>
         <p>留福美装はさいたま市大宮区の拠点から、{nm}のクリニック・医院・歯科医院の床洗浄・ワックス、剥離洗浄、定期清掃、業務用エアコン洗浄に伺います。駅前ビルのクリニックではビルの作業ルールに合わせて、駐車場のある戸建て型の医院では入口まわりの汚れや床面積に合わせて、作業の段取りを組みます。</p>
+        {f'<p>{p["extra"]}</p>' if p.get("extra") else ""}
         <p>{p["note"]}出張費を含めた金額は、お見積もりの段階で必ずご案内します。</p>
 '''))
+        if p.get("works"):
+            body += section("WORKS", f"{nm}での施工事例。", works_grid([WORKS[k] for k in p["works"]]), band=True)
         body += section("AREA", f"{nm}の対応市町村(全{total}市町村)。", groups +
-                        f'\n      <p class="area-note" style="margin-top:12px;">{nm}内の全市町村のクリニック・医院・歯科医院・診療所からのご相談を承ります。</p>', band=True)
+                        f'\n      <p class="area-note" style="margin-top:12px;">{nm}内の全市町村のクリニック・医院・歯科医院・診療所からのご相談を承ります。</p>', band=not p.get("works"))
         body += section("POINT", f"{nm}で作業するときに確認していること。", strength([
             ("pin", "移動と日程の段取り", "現地確認・お見積もり・初回作業の日程をまとめて組むなど、訪問回数を抑えます。"),
             ("box", "建物に合わせた準備", "ビルの作業申請、駐車場所、搬入経路を事前に確認します。"),
@@ -150,7 +153,7 @@ def build(write_page, sub_hero):
         body += cta_banner(h2=f"{nm}のクリニック清掃、まずはご相談ください。",
                            p=f"{nm}内の医院の場所・面積・気になる床の状態をお知らせください。出張費を含めて、無料でお見積もりをご案内します。")
         desc = (f"{nm}のクリニック・医院・歯科医院の定期清掃、床洗浄・ワックス、剥離洗浄、業務用エアコン洗浄。"
-                f"{nm}の全{total}市町村に対応し、複数院の清掃も窓口ひとつでまとめてお受けします。")
+                f"{nm}の全{total}市町村に対応し、複数院の清掃も窓口ひとつでまとめてお受けします。" + ("水戸市の美容クリニック様で施工実績あり。" if p.get("works") else ""))
         write_page(path, f"{nm}のクリニック定期清掃・床清掃｜歯科医院・医院の清掃業者｜留福美装", desc, body,
                    crumbs=[("対応エリア", "area/"), (nm, None)],
                    graph=[service_node(f"{nm}のクリニック清掃", desc, path, "クリニック定期清掃・床清掃",

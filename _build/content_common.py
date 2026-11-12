@@ -66,9 +66,33 @@ WORKS = {
         "azabujuban-beauty-clinic-aircon-cleaning-work", "クリニック 業務用エアコン洗浄 天井埋込型エアコンの分解作業 東京都港区麻布十番 美容クリニック様",
         "某美容クリニック様(東京都港区麻布十番)｜業務用エアコン洗浄 作業風景",
         desc="院内を養生したうえで、天井埋込型エアコンを分解して洗浄しました。"),
+    "mito_hex": single_card(
+        "業務用エアコン洗浄", "エアコン",
+        "mito-beauty-clinic-aircon-heat-exchanger-before-after", "クリニック 業務用エアコン洗浄 熱交換器 左が洗浄前・右が洗浄後 茨城県水戸市 美容クリニック様",
+        "某美容クリニック様 水戸院(茨城県水戸市)｜熱交換器の洗浄",
+        desc="写真左が洗浄前、右が洗浄後です。熱交換器に詰まった汚れを高圧洗浄で落としました。",
+        link=("@@/aircon/", "業務用エアコン洗浄の詳細・料金を見る →")),
+    "mito_drain": ba_card(
+        "業務用エアコン洗浄", "エアコン",
+        "mito-beauty-clinic-aircon-drain-pan-before", "mito-beauty-clinic-aircon-drain-pan-after",
+        "クリニック 業務用エアコン洗浄 ドレンパン・送風ファン 施工前 茨城県水戸市 美容クリニック様", "クリニック 業務用エアコン洗浄 ドレンパン・送風ファン 施工後 茨城県水戸市 美容クリニック様",
+        "某美容クリニック様 水戸院(茨城県水戸市)｜ドレンパンの洗浄",
+        desc="カビや水あかがたまっていたドレンパンと送風ファンを、取り外して洗浄しました。"),
+    "mito_carpet": stack_card(
+        "カーペット洗浄", "カーペット",
+        [("mito-beauty-clinic-carpet-cleaning-polisher", "クリニック カーペット洗浄 院内廊下のポリッシャー洗浄 茨城県水戸市 美容クリニック様"),
+         ("mito-beauty-clinic-carpet-cleaning-extractor", "クリニック カーペット洗浄 リンサーで汚れを吸い取る作業 茨城県水戸市 美容クリニック様")],
+        "某美容クリニック様 水戸院(茨城県水戸市)｜カーペット洗浄",
+        desc="院内廊下のカーペットを洗浄し、汚れを含んだ水をリンサーで吸い取って仕上げました。",
+        link=("@@/teiki/#carpet", "カーペット洗浄について →")),
+    "mito_1way": single_card(
+        "業務用エアコン洗浄", "エアコン",
+        "mito-beauty-clinic-aircon-1way-cleaning-work", "クリニック 天井埋込1方向カセット型エアコンの分解洗浄作業 茨城県水戸市 美容クリニック様",
+        "某美容クリニック様 水戸院(茨城県水戸市)｜1方向エアコン洗浄 作業風景",
+        desc="廊下の天井に設置された1方向カセット型エアコンを分解して洗浄しました。"),
 }
 
-WORKS_ORDER = ["beauty_floor", "kawaguchi_floor2", "kawaguchi_floor", "beauty_carpet", "azabu_drain", "azabu_work", "beauty_aircon", "office_drain", "office_hex"]
+WORKS_ORDER = ["mito_hex", "mito_drain", "beauty_floor", "kawaguchi_floor2", "mito_carpet", "kawaguchi_floor", "beauty_carpet", "azabu_drain", "azabu_work", "mito_1way", "beauty_aircon", "office_drain", "office_hex"]
 WORKS_TABS = ["すべて", "床洗浄", "カーペット", "エアコン"]
 
 # ---------------------------------------------------------------------------

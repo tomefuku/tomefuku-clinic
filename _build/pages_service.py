@@ -164,7 +164,7 @@ def teiki(write_page, sub_hero, service_node):
         <h3 id="carpet">カーペット洗浄</h3>
         <p>美容クリニックや心療内科、歯科医院の待合室などでは、カーペット敷きの床も多く見られます。カーペットは見た目の汚れが目立ちにくい一方で、繊維の奥にほこりや皮脂汚れがたまります。業務用のカーペットクリーナーで洗浄し、汚れを水分ごと回収します。料金:{price_or_estimate(PRICES["carpet"])}</p>
         <h3 id="glass">ガラス清掃</h3>
-        <p>入口の自動ドアや待合室の窓ガラスは、来院者が最初に目にする場所です。指紋や雨だれの跡、外側の砂ぼこりを落とし、医院の第一印象を整えます。床の定期清掃と同じ日にまとめて行うことができます。料金:{price_or_estimate(PRICES["glass"])}</p>
+        <p>入口の自動ドアや待合室の窓ガラスは、来院者が最初に目にする場所です。指紋や雨だれの跡、外側の砂ぼこりを落とし、医院の第一印象を整えます。床の定期清掃と同じ日にまとめて行うことができます。料金:1枚 {price_or_estimate(PRICES["glass"]).replace("/枚","")}(税込)</p>
 '''), band=True)
     body += section("FLOW", "定期清掃開始までの流れ。", prose('''
         <ol>
@@ -176,7 +176,7 @@ def teiki(write_page, sub_hero, service_node):
         </ol>
         <p>現在ほかの清掃業者と契約中の医院様も、契約期間を踏まえて切り替えの時期をご相談いただけます。詳しくは<a href="@@/column/changing-cleaning-company/">清掃業者を変更する際の流れ</a>をご覧ください。</p>
 '''))
-    body += section("WORKS", "定期清掃の施工事例。", works_grid([WORKS["beauty_carpet"], WORKS["beauty_floor"], WORKS["kawaguchi_floor"]]), band=True)
+    body += section("WORKS", "定期清掃の施工事例。", works_grid([WORKS["mito_carpet"], WORKS["beauty_carpet"], WORKS["beauty_floor"]]), band=True)
     body += section("FAQ", "定期清掃のよくあるご質問。", faq_details(faqs))
     body += specialty_area_block("定期清掃")
     body += related(path)
@@ -221,7 +221,7 @@ def aircon(write_page, sub_hero, service_node):
         <p style="font-size:13px;">台数・設置状況(天井の高さ・作業スペース)によって作業時間が変わります。お見積もりは無料です。</p>
       </div>''', band=True)
     body += section("WORKS", "業務用エアコン洗浄の施工事例。",
-                    works_grid([WORKS["azabu_drain"], WORKS["azabu_work"], WORKS["beauty_aircon"], WORKS["office_drain"], WORKS["office_hex"]]))
+                    works_grid([WORKS["mito_hex"], WORKS["mito_drain"], WORKS["azabu_drain"], WORKS["mito_1way"], WORKS["azabu_work"], WORKS["beauty_aircon"], WORKS["office_drain"], WORKS["office_hex"]]))
     body += section("FAQ", "業務用エアコン洗浄のよくあるご質問。", faq_details(faqs), band=True)
     body += specialty_area_block("業務用エアコン洗浄")
     body += related(path)

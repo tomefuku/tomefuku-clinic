@@ -288,7 +288,8 @@ def price(write_page, sub_hero, service_node):
 
 def contact(write_page, sub_hero, service_node):
     from pages_top import contact_section
-    body = contact_section(heading="お問い合わせ・無料お見積もり")
+    from parts import flow_section
+    body = contact_section(heading="お問い合わせ・無料お見積もり") + flow_section(band=True, cta=False)
     write_page("contact/",
                "お問い合わせ・無料見積もり｜クリニック清掃 留福美装",
                "クリニック・医院・歯科医院の床清掃・定期清掃・業務用エアコン洗浄のお問い合わせ・無料お見積もりはこちら。医院名・所在地・ご希望の清掃内容と頻度をお知らせください。",

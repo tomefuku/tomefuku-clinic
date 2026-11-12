@@ -3,7 +3,7 @@
 from config import COMPANY as C, PRICES, price_or_estimate
 from content_common import WORKS, WORKS_ORDER, WORKS_TABS, SPECIALTY_LIST, SERVICES
 from content_areas import AREAS, AREA_BY_SLUG
-from parts import faq_details, faq_jsonld
+from parts import faq_details, faq_jsonld, flow_section
 
 TOP_FAQS = [
     ("診療時間外や夜間の清掃は可能ですか？",
@@ -628,7 +628,7 @@ SOLUTION = '''
 
 def build(write_page):
     from build import service_node
-    body = (HERO + SOLUTION + price_section() + STRENGTH + works_section() + service_details() + MID_CTA + for_clinics()
+    body = (HERO + SOLUTION + price_section() + STRENGTH + works_section() + service_details() + flow_section() + MID_CTA + for_clinics()
             + area_section() + MESSAGE + about_section() + social_section() + faq_section() + contact_section())
     graph = [faq_jsonld([(q, a) for q, a in TOP_FAQS])]
     for p, n, d in SERVICES[:4]:

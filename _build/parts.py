@@ -187,3 +187,24 @@ def single_card(cat, data_cat, img, alt, h3, desc="", link=None):
 
 def works_grid(cards):
     return '      <div class="works-grid">\n' + "\n".join(cards) + '\n      </div>'
+
+
+FLOW_STEPS = [
+    ("お問い合わせ", "フォーム・お電話・メールでご連絡ください。医院名・所在地・ご希望の清掃内容がわかればスムーズです。床の写真があれば一緒にお送りください。"),
+    ("現地確認(無料)", "医院に伺い、床材・面積・汚れの状態、作業できる時間帯や機材の搬入経路を確認します。院内のルールもこのときにうかがいます。"),
+    ("お見積もり・ご提案", "作業内容と金額を明記したお見積もりをお出しします。定期清掃は、頻度と清掃内容を組み合わせたプランをご提案します。"),
+    ("作業(休診日・夜間)", "診療に影響しない時間帯に伺い、養生してから作業します。医療機器は動かさず、作業後は備品を元の位置に戻します。"),
+    ("作業報告・次回のご案内", "BEFORE/AFTER写真付きの作業報告書をお送りします。定期清掃は次回の時期を当社で管理し、時期が来たらご案内します。"),
+]
+
+
+def flow_section(band=False, cta=True, sid="flow"):
+    items = "\n".join(f'''        <li class="flow-step reveal">
+          <div class="flow-num"><span>STEP</span>{i}</div>
+          <h3>{t}</h3>
+          <p>{d}</p>
+        </li>''' for i, (t, d) in enumerate(FLOW_STEPS, 1))
+    c = '\n      <div class="menu-cta"><a class="btn" href="#contact">まずはお問い合わせ(無料)</a></div>' if cta else ""
+    return section("FLOW", "ご依頼の流れ。", f'      <ol class="flow-list">\n{items}\n      </ol>{c}',
+                   desc="はじめての方でも安心してご依頼いただけるよう、お問い合わせから作業後のご報告までの流れをご紹介します。現地確認とお見積もりは無料です。",
+                   band=band, sid=sid)

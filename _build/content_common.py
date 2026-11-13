@@ -90,9 +90,16 @@ WORKS = {
         "mito-beauty-clinic-aircon-1way-cleaning-work", "クリニック 天井埋込1方向カセット型エアコンの分解洗浄作業 茨城県水戸市 美容クリニック様",
         "某美容クリニック様 水戸院(茨城県水戸市)｜1方向エアコン洗浄 作業風景",
         desc="廊下の天井に設置された1方向カセット型エアコンを分解して洗浄しました。"),
+    "mito_hex2": ba_card(
+        "業務用エアコン洗浄", "エアコン",
+        "mito-clinic-heat-exchanger-before", "mito-clinic-heat-exchanger-after",
+        "クリニック 業務用エアコン洗浄 熱交換器 施工前 茨城県水戸市 美容クリニック様", "クリニック 業務用エアコン洗浄 熱交換器 施工後 茨城県水戸市 美容クリニック様",
+        "某美容クリニック様 水戸院(茨城県水戸市)｜熱交換器ビフォーアフター",
+        desc="黒く汚れが詰まった熱交換器を高圧洗浄し、アルミフィンの奥の汚れまで落としました。",
+        link=("@@/aircon/", "業務用エアコン洗浄の詳細・料金を見る →")),
 }
 
-WORKS_ORDER = ["mito_hex", "mito_drain", "beauty_floor", "kawaguchi_floor2", "mito_carpet", "kawaguchi_floor", "beauty_carpet", "azabu_drain", "azabu_work", "mito_1way", "beauty_aircon", "office_drain", "office_hex"]
+WORKS_ORDER = ["mito_drain", "mito_hex2", "mito_hex", "beauty_floor", "kawaguchi_floor2", "mito_carpet", "kawaguchi_floor", "beauty_carpet", "azabu_drain", "azabu_work", "mito_1way", "beauty_aircon", "office_drain", "office_hex"]
 WORKS_TABS = ["すべて", "床洗浄", "カーペット", "エアコン"]
 
 # ---------------------------------------------------------------------------

@@ -124,22 +124,22 @@ EST = '<div class="price" style="font-size:15px;">お見積もり</div>'
 def price_section():
     a_from = PRICES["aircon_from"]
     cards = [
-        card("@@/floor-wax/", "クリニック床洗浄・ワックス", f'<div class="price">{PRICES["floor_unit"]}<small>円(税込)〜/㎡</small></div>',
-             "待合室・診察室・処置室・廊下の床を洗浄し、ワックスで保護します。床材と汚れの状態を確認して正式にお見積もりします。",
-             featured=True, kicker="MAIN SERVICE", tagset=["休診日・夜間対応", "1㎡ 880円〜", "医療機器に配慮"]),
-        card("@@/teiki/", "クリニック定期清掃", EST, "週1回・毎月・隔月・年4回の月額プランで、床・カーペット・ガラスなどを定期的に"),
-        card("@@/hakuri/", "床剥離洗浄", EST, "古いワックスと黒ずみを剥がして床をリセット"),
-        card("@@/floor-wax/#waiting", "待合室・診察室の床清掃", f'<div class="price">{PRICES["floor_unit"]}<small>円(税込)〜/㎡</small></div>', "来院者の動線の黒ずみを重点的に"),
-        card("@@/specialty/dental/", "医院・歯科医院の定期清掃", EST, "ユニットまわりの床・キッズスペースにも配慮"),
         card("@@/aircon/", "業務用エアコン洗浄", f'<div class="price">{a_from}<small>円(税込)〜/台</small></div>',
              "天井埋込型・天吊り型の分解洗浄。診療時間外・夜間の作業に対応します。<br>実績:関東で多院展開する美容クリニック様の全院を担当",
              featured=True, kicker="AIR CONDITIONER", tagset=["複数院一括対応", "夜間対応可"]),
         card("@@/aircon/#filter", "エアコンフィルター清掃",
              f'<div class="price">{PRICES["filter"].replace("円/台", "")}<small>円(税込)/台</small></div>', "業務用エアコンのフィルターを洗浄"),
-        card("@@/teiki/#glass", "ガラス清掃", '<div class="price">3,300<small>円(税込)/枚</small></div>',
-             "入口・待合室の窓ガラスや自動ドア"),
+        card("@@/teiki/", "クリニック定期清掃", EST, "週1回・毎月・隔月・年4回の月額プランで、床・カーペット・ガラスなどを定期的に"),
         card("@@/teiki/#carpet", "カーペット洗浄", f'<div class="price">{PRICES["carpet_unit"]}<small>円(税込)〜/㎡</small></div>',
              "待合室・施術室のカーペットを洗浄"),
+        card("@@/teiki/#glass", "ガラス清掃", '<div class="price">3,300<small>円(税込)/枚</small></div>',
+             "入口・待合室の窓ガラスや自動ドア"),
+        card("@@/floor-wax/", "クリニック床洗浄・ワックス", f'<div class="price">{PRICES["floor_unit"]}<small>円(税込)〜/㎡</small></div>',
+             "待合室・診察室・処置室・廊下の床を洗浄し、ワックスで保護します。床材と汚れの状態を確認して正式にお見積もりします。",
+             featured=True, kicker="FLOOR CLEANING", tagset=["休診日・夜間対応", "1㎡ 880円〜", "医療機器に配慮"]),
+        card("@@/hakuri/", "床剥離洗浄", EST, "古いワックスと黒ずみを剥がして床をリセット"),
+        card("@@/floor-wax/#waiting", "待合室・診察室の床清掃", f'<div class="price">{PRICES["floor_unit"]}<small>円(税込)〜/㎡</small></div>', "来院者の動線の黒ずみを重点的に"),
+        card("@@/specialty/dental/", "医院・歯科医院の定期清掃", EST, "ユニットまわりの床・キッズスペースにも配慮"),
         card("@@/price/", "料金一覧", '<div class="price" style="font-size:15px;">㎡単価・月額プラン</div>',
              "床洗浄・カーペット洗浄の㎡単価と定期清掃の月額プラン", more="料金表を見る"),
     ]
@@ -150,7 +150,7 @@ def price_section():
       <div class="sec-head reveal">
         <span class="kicker">SERVICE / PRICE</span>
         <h2 id="service">何を頼めて、いくらか。</h2>
-        <p class="desc">クリニック・医院・歯科医院向けの主な清掃メニューです。床清掃は面積・床材・汚れの状態によって金額が変わるため、現地確認(無料)のうえでお見積もりをご案内します。業務用エアコン洗浄は台数・機種ごとの料金です。</p>
+        <p class="desc">クリニック・医院・歯科医院向けの主な清掃メニューです。業務用エアコン洗浄は台数・機種ごとの料金、床洗浄・カーペット洗浄は1㎡あたりの料金が目安です。正式な金額は現地確認(無料)のうえでご案内します。</p>
       </div>
 
       <div class="price-grid">
@@ -244,6 +244,13 @@ def sd(id_, title, price, intro, lists, link, extra=""):
 def service_details():
     ac = "".join(f"<li>{n}:{p} <span style=\"color:var(--ink-soft);\">({s})</span></li>" for n, p, s in PRICES["aircon"])
     items = [
+        sd("sd-aircon", "業務用エアコン洗浄", f"{PRICES['aircon_from']}円(税込)〜/台",
+           "天井埋込型・天吊り型の業務用エアコンを分解し、高圧洗浄します。診療時間外・夜間の作業に対応し、複数院の一括対応も可能です。",
+           [("料金表", [])], ("@@/aircon/", "業務用エアコン洗浄の詳細を見る →"),
+           extra=f"\n            <ul>{ac}</ul>"),
+        sd("sd-filter", "エアコンフィルター清掃", PRICES["filter"] + "(税込)",
+           "業務用エアコンのフィルターを取り外して洗浄します。床の定期清掃とあわせて定期的に行うこともできます。",
+           [], ("@@/aircon/#filter", "フィルター清掃について →")),
         sd("sd-floor", "クリニック床洗浄・ワックス", "1㎡あたり 880円(税込)〜",
            "待合室・受付・診察室・処置室・廊下など、院内の床をポリッシャーで洗浄し、ワックスを塗布して保護します。床材(長尺シート・塩ビタイル・フローリング・石材調タイルなど)を確認し、素材に合った方法で仕上げます。",
            [("こんな医院様におすすめ", ["待合室の動線や受付前の黒ずみが気になる", "日常のモップ拭きでは床のくすみが取れない", "開院時のきれいな床の状態を保ちたい"]),
@@ -266,13 +273,6 @@ def service_details():
         sd("sd-glass", "ガラス清掃", "3,300円(税込)/枚",
            "入口の自動ドア、待合室の窓ガラス、ガラスパーテーションなどの清掃です。床の定期清掃とあわせてご依頼いただけます。",
            [], ("@@/teiki/#glass", "ガラス清掃について →")),
-        sd("sd-aircon", "業務用エアコン洗浄", f"{PRICES['aircon_from']}円(税込)〜/台",
-           "天井埋込型・天吊り型の業務用エアコンを分解し、高圧洗浄します。診療時間外・夜間の作業に対応し、複数院の一括対応も可能です。",
-           [("料金表", [])], ("@@/aircon/", "業務用エアコン洗浄の詳細を見る →"),
-           extra=f"\n            <ul>{ac}</ul>"),
-        sd("sd-filter", "エアコンフィルター清掃", PRICES["filter"] + "(税込)",
-           "業務用エアコンのフィルターを取り外して洗浄します。床の定期清掃とあわせて定期的に行うこともできます。",
-           [], ("@@/aircon/#filter", "フィルター清掃について →")),
     ]
     # 空の "料金表" 見出しの ul を除去
     html = "".join(items).replace("\n            <h4>料金表</h4>\n            <ul>\n            </ul>", "\n            <h4>料金表</h4>")
